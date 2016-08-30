@@ -5,7 +5,7 @@
 	<html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
-		<title>${title} | 哨兵</title>
+		<title> 我的主页 | 哨兵</title>
 		<link rel="stylesheet" type="text/css" href="/css/style.css">
 	</head>
 	<body>
@@ -20,11 +20,11 @@
 			</div>
 			<h1>Sentry</h1>
 			<div class="navigation">
-					<a  href="/main">主页</a> |
-					<a  href="/playground">操场</a>
+					<a  href="/main">我的主页</a> |
+					<a  href="/playground">哨兵操场</a>
 			</div>
 			<div class="body">
-				<#nested />
+		
 			</div>
 			<div class="footer">
 				哨兵 Sentry&mdash; 一天一个想法 | <a href = "https://github.com/JavaProgrammerLB">吃西瓜的刘备</a>
