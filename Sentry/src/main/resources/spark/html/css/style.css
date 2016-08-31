@@ -38,20 +38,17 @@ div.page div.navigation div.nav{
   margin-top: 50px;
 }
 
-div.page div.content{
-  float: left;
+div.content{
+  -float: left;
   padding-right: 10px;
   padding-left: 10px;
 }
 
 div.page div.content div.one-fourths{
-  width: 25%;
   height: 100px;
-  background: black;
 }
 
 div.page div.content div.three-fourths{
-  width: 75%;
   height: 100px;
   background: red;
 }
