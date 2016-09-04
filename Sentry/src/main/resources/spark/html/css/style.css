@@ -33,24 +33,23 @@ div.page div.navigation{
 }
 
 div.page div.navigation div.nav{
-
   margin-left: 20px;
   margin-top: 50px;
 }
 
 div.content{
-  -float: left;
   padding-right: 10px;
   padding-left: 10px;
-}
-
-div.page div.content div.one-fourths{
-  height: 100px;
-}
-
-div.page div.content div.three-fourths{
-  height: 100px;
   background: red;
+}
+
+div.one-fourths{
+  float: left;
+  width: 25%;
+}
+
+div.three-fourths{
+  width: 75%;
 }
 
 div.page div.footer{
