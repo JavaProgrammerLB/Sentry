@@ -8,39 +8,37 @@ div.page{
   width: 980px;
 }
 
-div.page div.header{
-  background: green;
+div.header{
+  -background: green;
 }
 
-div.page div.header div.leftside{
+div.leftside{
   text-align: left;
 }
 
-div.page div.header div.leftside span{
+div.headtext{
   font-size: 36px;
   margin-left: 20px;
   padding-top: 50px;
 }
 
-div.page div.header div.rightside{
+div.rightside{
   font-size: 30px;
   text-align: right;
   margin-right:  20px;
 }
 
-div.page div.navigation{
+div.navigation{
 
 }
 
-div.page div.navigation div.nav{
-  margin-left: 20px;
+div.nav{
   margin-top: 50px;
 }
 
 div.content{
   padding-right: 10px;
   padding-left: 10px;
-  background: red;
 }
 
 div.one-fourths{
@@ -48,11 +46,15 @@ div.one-fourths{
   width: 25%;
 }
 
+one-fourths h1{
+  font-size: 32;
+}
+
 div.three-fourths{
   width: 75%;
 }
 
-div.page div.footer{
+div.footer{
   position: relative;
   padding-top: 40px;
   padding-bottom: 40px;
