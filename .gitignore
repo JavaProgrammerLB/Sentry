@@ -18,6 +18,7 @@ hs_err_pid*
 .settings/
 .metadata
 RemoteSystemsTempFiles
+.recommenders
 
 #Maven
 log/
