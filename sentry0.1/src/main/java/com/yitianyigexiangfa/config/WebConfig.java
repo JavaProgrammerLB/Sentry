@@ -25,6 +25,11 @@ public class WebConfig {
 	
 	private void setupRoutes(){
 		get("/",(req, res) -> {
+			res.redirect("/refresh");
+			return null;
+		});
+		
+		get("/refresh",(req, res) -> {
 			Map<String, Object> map = new HashMap<String, Object>();
 			List<Content> cons = new ArrayList<Content>();
 			Content con = service.getLjsw();
