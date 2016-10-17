@@ -13,5 +13,6 @@ Spring: DI and JDBC
 
 #### Get start   
 1.DatabaseConfig.java change mysql connect information(url,username,password)  
-2.App.java run as java application  
-3.visit http://localhost:4567
+2.Create a schema named "sentry", create a table with resources/sentry.sql
+3.App.java run as java application  
+4.visit http://localhost:4567
