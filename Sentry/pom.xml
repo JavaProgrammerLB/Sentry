@@ -1,7 +1,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.yitianyigexiangfa</groupId>
-  <artifactId>sentry0.1</artifactId>
+  <artifactId>Sentry</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <properties>
   	<jdk.version>1.8</jdk.version>
@@ -76,8 +76,8 @@
   		<version>1.9.2</version>
   	</dependency>
   </dependencies>
-  
-  
+
+
     <build>
 		<plugins>
 			<plugin>
@@ -88,7 +88,7 @@
 					<target>${jdk.version}</target>
 				</configuration>
 			</plugin>
-			
+
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 			  	<artifactId>exec-maven-plugin</artifactId>
