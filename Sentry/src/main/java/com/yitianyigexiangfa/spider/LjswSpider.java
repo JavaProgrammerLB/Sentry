@@ -58,13 +58,7 @@ public class LjswSpider {
 		if(nolist == null || nolist.size() == 0 || no2pro == null || no2pro.size() == 0) return null;
 		else{
 			String no = nolist.get(nolist.size() - 1);
-			Programme pro = no2pro.get(no);
-			List<Programme> pros = proDao.getProgrammeByPrimaryKey(pro.getVol());
-			if(pros != null && pros.size() == 0){				
-				// insert
-				proDao.insertProgramme(pro);
-			}
-			return pro;
+			return no2pro.get(no);
 		}
 	}
 }
