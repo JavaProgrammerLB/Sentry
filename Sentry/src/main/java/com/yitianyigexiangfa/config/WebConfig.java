@@ -38,7 +38,7 @@ public class WebConfig {
 			List<Programme> prolist = service.getProgrammeByPrimaryKey(vol);
 			if(prolist != null && prolist.size() == 0){
 				// insert into database
-				service.addProgramme(prolist.get(0));
+				service.addProgramme(pro);
 				// send email
 				service.sendEmail();
 			}
