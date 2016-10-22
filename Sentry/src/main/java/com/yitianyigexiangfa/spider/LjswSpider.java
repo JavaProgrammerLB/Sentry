@@ -39,6 +39,7 @@ public class LjswSpider {
 						Element aTage = link.select("a[title]").get(0);
 						String title = aTage.attr("title");
 						String href = aTage.attr("href");
+						if (title.indexOf("No.") == -1) continue;// special programme
 						String vol = title.substring(title.indexOf("No.") + 3);
 						if(vol == null || "".equals(vol)) continue;
 						Programme pro = new Programme();
