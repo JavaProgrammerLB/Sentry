@@ -7,13 +7,33 @@
   </head>
   <body>
     <div class="user">
-      <for action="">
-        <label for="GET-name">Name:</label>
-        <input id="GET-name" type="text" name="name"></br>
-        <label for="GET-email">Email:</label>
-        <input id="GET-email" type="text" name="email"></br>
-        <input type="submit" value="Save">
-      </form>
+	    <form method="post" action="/createuser">
+    			<table>
+					<tr>
+						<td>
+							邮箱：
+						</td>
+						<td>
+							<input type="text" id="email"/>
+						</td>	
+					</tr>
+					<tr>
+						<td>
+							密码：
+						</td>
+						<td>
+							<input type="text" id="pass"/>
+						</td>	
+					</tr>
+					<tr>
+						<td>
+							<input type="submit" id="submit"/>
+						</td>
+						<td>
+						</td>	
+					</tr>
+				</table>
+    	</form>
     </div>
   </body>
 </html>
