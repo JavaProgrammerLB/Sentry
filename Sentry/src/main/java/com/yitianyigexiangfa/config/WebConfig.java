@@ -46,5 +46,10 @@ public class WebConfig {
 			map.put("contents", pros);
 			return new ModelAndView(map, "index.ftl");
 		}, new FreeMarkerEngine());
+		
+		get("/createuser",(req,res) -> {
+			
+			return null;
+		});
 	}
 }
