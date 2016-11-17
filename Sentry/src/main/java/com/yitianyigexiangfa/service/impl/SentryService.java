@@ -6,7 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.yitianyigexiangfa.dao.ProgrammeDao;
+import com.yitianyigexiangfa.email.EmailServer;
 import com.yitianyigexiangfa.model.Programme;
+import com.yitianyigexiangfa.model.User;
 import com.yitianyigexiangfa.spider.LjswSpider;
 
 @Service
@@ -16,6 +18,8 @@ public class SentryService {
 	private LjswSpider ljsw;
 	@Autowired
 	private ProgrammeDao programmeDao;
+	@Autowired
+	private EmailServer emailServer;
 	
 	
 	// spider here
@@ -24,8 +28,8 @@ public class SentryService {
 	}
 	
 	// email here
-	public void sendEmail(){
-		System.out.println("发送一封邮件");
+	public void sendEmail(User user, Programme pro){
+		emailServer.sendEmail(user, pro);
 	}
 	
 	// timer task here
