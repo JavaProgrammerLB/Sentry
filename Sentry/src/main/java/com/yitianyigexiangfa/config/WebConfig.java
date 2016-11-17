@@ -12,6 +12,7 @@ import spark.ModelAndView;
 import spark.template.freemarker.FreeMarkerEngine;
 
 import com.yitianyigexiangfa.model.Programme;
+import com.yitianyigexiangfa.model.User;
 import com.yitianyigexiangfa.service.impl.SentryService;
 
 public class WebConfig {
@@ -40,7 +41,10 @@ public class WebConfig {
 				// insert into database
 				service.addProgramme(pro);
 				// send email
-				service.sendEmail();
+				User user = new User();
+				user.setEmail("to@gmail.com");
+				user.setName("username");
+				service.sendEmail(user, pro);
 			}
 			pros.add(pro);
 			map.put("contents", pros);
