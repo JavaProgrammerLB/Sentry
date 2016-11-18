@@ -37,8 +37,8 @@ import freemarker.template.TemplateNotFoundException;
 
 @Repository
 public class EmailServerSmtpImpl implements EmailServer {
-	final String username = "bei.liu@fondalighting.com";
-	final String password = "liubei@20150415";
+	final String username = "user@gmail.com";
+	final String password = "password";
 
 	@Override
 	public void sendEmail(User user, Programme pro) {
