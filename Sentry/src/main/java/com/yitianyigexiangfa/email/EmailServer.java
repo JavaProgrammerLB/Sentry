@@ -1,5 +1,9 @@
 package com.yitianyigexiangfa.email;
 
-public class EmailServer {
-	
+import com.yitianyigexiangfa.model.Programme;
+import com.yitianyigexiangfa.model.User;
+
+public interface EmailServer {
+
+	void sendEmail(User user, Programme pro);
 }
