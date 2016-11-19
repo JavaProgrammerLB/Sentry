@@ -43,7 +43,7 @@ public class WebConfig {
 				// send email
 				User user = new User();
 				user.setEmail("to@gmail.com");
-				user.setName("username");
+				user.setName("liubei");
 				service.sendEmail(user, pro);
 			}
 			pros.add(pro);

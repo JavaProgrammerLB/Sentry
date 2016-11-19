@@ -37,13 +37,27 @@ import freemarker.template.TemplateNotFoundException;
 
 @Repository
 public class EmailServerSmtpImpl implements EmailServer {
-	final String username = "user@gmai.com";
-	final String password = "******";
+	// 邮箱用户名
+	private String username = null;
+	// 邮箱密码
+	private String password = null; 
 
 	@Override
 	public void sendEmail(User user, Programme pro) {
 		// 检查数据是否为空
 		if(user == null || pro == null) return;
+		// 创建获取邮箱数据的属性对象
+		Properties cfgProps = new Properties();
+		try {
+			// 加载配置文件
+			cfgProps.load(new FileInputStream(new File("src/main/resources/config/cfg.properties")));
+			// 读取数据
+			username = cfgProps.getProperty("email.server.username");
+			password = cfgProps.getProperty("email.server.pass");
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}
+		// 创建用来构建会话的属性文件
 		Properties props = new Properties();
 		try {
 			props.load(new FileInputStream(new File("src/main/resources/email/settings.properties")));
