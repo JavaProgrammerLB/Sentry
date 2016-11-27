@@ -17,3 +17,9 @@ target/
 
 #Mac
 .DS_Store
+
+#tomcat
+Servers
+
+#webapp
+Sentry/src/main/webapp/META-INF/*
