@@ -16,6 +16,7 @@
   	<mysql.connnector.version>5.1.37</mysql.connnector.version>
   	<jsoup.version>1.9.2</jsoup.version>
   	<javax.mail.version>1.5.6</javax.mail.version>
+  	<slf4j.version>1.7.21</slf4j.version>
   </properties>
   <dependencies>
   	<dependency>
@@ -83,6 +84,11 @@
   		<artifactId>javax.mail</artifactId>
   		<version>${javax.mail.version}</version>
   	</dependency>
+  	<dependency>
+  		<groupId>org.slf4j</groupId>
+  		<artifactId>slf4j-simple</artifactId>
+  		<version>${slf4j.version}</version>
+  	</dependency>
   </dependencies>
 
 
@@ -116,4 +122,5 @@
 			</plugin>
 		</plugins>
 	</build>
+    <packaging>war</packaging>
 </project>
