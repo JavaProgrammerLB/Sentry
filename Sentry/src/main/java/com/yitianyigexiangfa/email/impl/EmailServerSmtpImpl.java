@@ -24,7 +24,7 @@ import javax.mail.internet.MimeMultipart;
 
 import org.springframework.stereotype.Repository;
 
-import com.yitianyigexiangfa.email.EmailServer;
+import com.yitianyigexiangfa.email.IEmailServer;
 import com.yitianyigexiangfa.model.Programme;
 import com.yitianyigexiangfa.model.User;
 
@@ -36,7 +36,7 @@ import freemarker.template.TemplateException;
 import freemarker.template.TemplateNotFoundException;
 
 @Repository
-public class EmailServerSmtpImpl implements EmailServer {
+public class EmailServerSmtpImpl implements IEmailServer {
 	// 邮箱用户名
 	private String username = null;
 	// 邮箱密码

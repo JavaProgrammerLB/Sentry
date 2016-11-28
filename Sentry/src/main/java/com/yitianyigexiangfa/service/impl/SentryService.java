@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.yitianyigexiangfa.dao.ProgrammeDao;
-import com.yitianyigexiangfa.email.EmailServer;
+import com.yitianyigexiangfa.email.IEmailServer;
 import com.yitianyigexiangfa.model.Programme;
 import com.yitianyigexiangfa.model.User;
 import com.yitianyigexiangfa.spider.LjswSpider;
@@ -19,7 +19,7 @@ public class SentryService {
 	@Autowired
 	private ProgrammeDao programmeDao;
 	@Autowired
-	private EmailServer emailServer;
+	private IEmailServer emailServer;
 	
 	
 	// spider here
