@@ -3,6 +3,7 @@ package com.yitianyigexiangfa.email.impl;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.StringWriter;
 import java.io.Writer;
 import java.util.HashMap;
@@ -50,7 +51,8 @@ public class EmailServerSmtpImpl implements IEmailServer {
 		Properties cfgProps = new Properties();
 		try {
 			// 加载配置文件
-			cfgProps.load(new FileInputStream(new File("src/main/resources/config/cfg.properties")));
+			InputStream is = this.getClass().getClassLoader().getResourceAsStream("config/cfg.properties");
+			cfgProps.load(is);
 			// 读取数据
 			username = cfgProps.getProperty("email.server.username");
 			password = cfgProps.getProperty("email.server.pass");
@@ -60,7 +62,9 @@ public class EmailServerSmtpImpl implements IEmailServer {
 		// 创建用来构建会话的属性文件
 		Properties props = new Properties();
 		try {
-			props.load(new FileInputStream(new File("src/main/resources/email/settings.properties")));
+			// 加载配置文件
+			InputStream is = getClass().getClassLoader().getResourceAsStream("email/settings.properties");
+			props.load(is);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

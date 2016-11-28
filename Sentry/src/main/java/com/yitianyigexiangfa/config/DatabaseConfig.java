@@ -3,6 +3,7 @@ package com.yitianyigexiangfa.config;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.Properties;
 
 import javax.sql.DataSource;
@@ -22,8 +23,9 @@ public class DatabaseConfig {
 		// 创建获取数据库登录信息的属性对象
 		Properties props = new Properties();
 		try {
+			InputStream is = getClass().getClassLoader().getResourceAsStream("config/cfg.properties");
 			// 加载数据
-			props.load(new FileInputStream(new File("src/main/resources/config/cfg.properties")));
+			props.load(is);
 			// 获取数据
 			user = props.getProperty("database.user");
 			pass = props.getProperty("database.pass");
