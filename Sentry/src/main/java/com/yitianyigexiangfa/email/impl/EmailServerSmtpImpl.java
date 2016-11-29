@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.StringWriter;
 import java.io.Writer;
+import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
@@ -80,8 +81,12 @@ public class EmailServerSmtpImpl implements IEmailServer {
 			message.setSubject("哨兵有更新啦");
 			// 创建内容体对象
 			BodyPart body = new MimeBodyPart();
+			// 创建Freemarker配置对象
 			Configuration cfg = new Configuration();
-			Template template = cfg.getTemplate("src/main/resources/email/template/emailTemplate.ftl");
+			// 通过classLoader来定位文件位置
+			cfg.setClassLoaderForTemplateLoading(getClass().getClassLoader(), "email/template");
+			// 获取文件
+			Template template = cfg.getTemplate("emailTemplate.ftl");
 			Map<String, String> rootMap = new HashMap<String, String>();
 			rootMap.put("name", user.getName());
 			rootMap.put("url", pro.getUrl());
