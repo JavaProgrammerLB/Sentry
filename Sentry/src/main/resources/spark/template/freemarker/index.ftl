@@ -7,7 +7,7 @@
   </head>
   <body>
     <div class="title">
-      <input type="button" class="refresh" value="刷新" onclick="location.href='/refresh'"/>
+      <input type="button" class="refresh" value="刷新" onclick="location.href='refresh'"/>
       <h4>最新节目</h4>
     </div>
 	<#list contents as con>
