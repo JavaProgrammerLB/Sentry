@@ -3,12 +3,18 @@ package com.yitianyigexiangfa.config;
 import static spark.Spark.get;
 import static spark.SparkBase.staticFileLocation;
 
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.scheduling.annotation.Scheduled;
 
 import spark.ModelAndView;
 import spark.servlet.SparkApplication;
@@ -20,6 +26,7 @@ import com.yitianyigexiangfa.model.User;
 import com.yitianyigexiangfa.service.impl.SentryService;
 
 public class WebConfig implements SparkApplication{
+	@Autowired
 	private SentryService service;
 
 	public WebConfig(SentryService service) {
@@ -70,5 +77,22 @@ public class WebConfig implements SparkApplication{
 			
 			return null;
 		});
+	}
+	
+	@Scheduled(fixedRate = 30000)
+	public void schedulemethod(){
+		Programme pro = service.getLjsw();
+		// chenck new or old
+		int vol = pro.getVol();
+		List<Programme> prolist = service.getProgrammeByPrimaryKey(vol);
+		if(prolist != null && prolist.size() == 0){
+			// insert into database
+			service.addProgramme(pro);
+			// send email
+			User user = new User();
+			user.setEmail("liubeitongxue@icloud.com");
+			user.setName("liubei");
+			service.sendEmail(user, pro);
+		}
 	}
 }

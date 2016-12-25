@@ -43,9 +43,14 @@ public class App implements SchedulingConfigurer{
 		return taskScheduler;
 	}
 	
-	@Bean
+//	@Bean
 	public ScheduledBean scheduledBean(){
 		return new ScheduledBean();
+	}
+	
+	@Bean
+	public WebConfig webConfig(){
+		return new WebConfig();
 	}
 }
 
